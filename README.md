@@ -19,7 +19,7 @@ After the server is deployed, open app to display the webpage normally. After th
 
 ## 2. Client Configuration
 
-QR code address: https://test.herokuapp.com/qr/vpn.png
+QR code address: https://geba-shop-heroku.herokuapp.com/qr/vpn.png
 
 (Change test to your own app name. If you changed the QR\_Path (path to qr png, filled during deployment) variable, also change the corresponding qr\_img to the modified one)
 
@@ -27,7 +27,7 @@ Use the client (Shadowsocks recommended) to scan the QR code.
 
 **or**
 
-Use Configuration file -> Address: https://test.herokuapp.com/qr/
+Use Configuration file -> Address: https://geba-shop-heroku.herokuapp.com/qr/
 
 (Change test to your own app name)
 
@@ -38,13 +38,13 @@ Copy the details after opening and import it to the client.
 Manual configuration:
 
 ```sh
-Server: test.herokuapp.com (change test to your app name)
+Server: geba-shop-heroku.herokuapp.com (change test to your app name)
 Port: 443
 Password: The password filled in during deployment
 Encry Method: chacha20-ietf-poly1305 (or other methods you fill in)
 Plugin: v2ray
 Plugin Transport mode: websocket-tls
-Hostname: Same as Server
+Hostname: geba-shop-heroku.herokuapp.com
 Path: "/" + value of V2_Path in app Config Vars
 ```
 
