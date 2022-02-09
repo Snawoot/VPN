@@ -38,7 +38,7 @@ Copy the details after opening and import it to the client.
 Manual configuration:
 
 ```sh
-Server: test.herokuapp.com (change test to your app name)
+Server: fffff.herokuapp.com (change test to your app name)
 Port: 443
 Password: The password filled in during deployment
 Encry Method: chacha20-ietf-poly1305 (or other methods you fill in)
