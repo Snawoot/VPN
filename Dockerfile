@@ -6,8 +6,8 @@ RUN tar xzvf v2ray-plugin-linux-amd64-${V2RAY_VERSION}.tar.gz
 
 FROM debian:sid-slim
 
-COPY --chmod=755 *.sh /
-COPY --chmod=755 --from=downloader /v2ray-plugin_linux_amd64 /usr/bin/v2ray-plugin
+COPY *.sh /
+COPY --from=downloader /v2ray-plugin_linux_amd64 /usr/bin/v2ray-plugin
 
 RUN set -eux \
     && apt update -y \
@@ -15,6 +15,7 @@ RUN set -eux \
     && DEBIAN_FRONTEND=noninteractive apt install -y qrencode shadowsocks-libev nginx-light \
     && apt clean -y \
     && mkdir -p /etc/shadowsocks-libev /wwwroot \
+    && chmod +x /*.sh /usr/bin/v2ray-plugin \
     && rm -rf /var/lib/apt/lists/*
 
 CMD /entrypoint.sh
