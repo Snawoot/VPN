@@ -1,5 +1,5 @@
 # Personal VPN
-## Shadowsocks+V2Ray-plugin
+## [shadowsocks-rust](https://github.com/shadowsocks/shadowsocks-rust)+[xray-plugin](https://github.com/teddysun/xray-plugin)
 
 Click the button below to deploy to Heroku
 
@@ -50,9 +50,9 @@ Path: "/" + value of V2_Path in app Config Vars
 
 Those without a client can also download from here (Android):
 
-[shadowsocks](https://github.com/shadowsocks/shadowsocks-android/releases/latest/download/shadowsocks--universal-5.1.9.apk)
+[shadowsocks](https://github.com/shadowsocks/shadowsocks-android/releases/latest/)
 
-[v2ray-plugin](https://github.com/shadowsocks/v2ray-plugin-android/releases/latest/download/v2ray-arm64-v8a-1.3.1.apk)
+[v2ray-plugin](https://github.com/shadowsocks/v2ray-plugin-android/releases/latest/)
 
 windows:
 

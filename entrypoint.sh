@@ -1,11 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 if [[ -z "${PASSWORD}" ]]; then
   export PASSWORD="5c301bb8-6c77-41a0-a606-4ba11bbab084"
 fi
 echo ${PASSWORD}
-
-export PASSWORD_JSON="$(echo -n "$PASSWORD" | jq -Rc)"
 
 if [[ -z "${ENCRYPT}" ]]; then
   export ENCRYPT="chacha20-ietf-poly1305"
@@ -30,13 +28,13 @@ case "$AppName" in
 		;;
 esac
 
-bash /conf/shadowsocks-libev_config.json >  /etc/shadowsocks-libev/config.json
+sh /conf/shadowsocks-libev_config.json > /etc/shadowsocks-libev/config.json
 echo /etc/shadowsocks-libev/config.json
 cat /etc/shadowsocks-libev/config.json
 
-bash /conf/nginx_ss.conf > /etc/nginx/conf.d/ss.conf
-echo /etc/nginx/conf.d/ss.conf
-cat /etc/nginx/conf.d/ss.conf
+sh /conf/nginx_ss.conf > /etc/nginx/http.d/ss.conf
+echo /etc/nginx/http.d/ss.conf
+cat /etc/nginx/http.d/ss.conf
 
 
 if [ "$AppName" = "no" ]; then
@@ -49,6 +47,6 @@ else
   echo -n "${ss}" | qrencode -s 6 -o /wwwroot/${QR_Path}/vpn.png
 fi
 
-ss-server -c /etc/shadowsocks-libev/config.json &
-rm -rf /etc/nginx/sites-enabled/default
+ssserver -c /etc/shadowsocks-libev/config.json &
+rm -rf /etc/nginx/http.d/default.conf
 nginx -g 'daemon off;'
