@@ -1,6 +1,6 @@
 {
-  "name": "Shadowsocks+V2Ray-plugin Rapid deployment",
-  "description": "Deploy Shadowsocks+V2Ray-plugin to Heroku.",
+  "name": "MyHobbies",
+  "description": "MyHobbies",
   "keywords": ["V2ray", "Shadowsocks", "V2Ray-plugin"],
   "env": {
      "ENCRYPT": {
